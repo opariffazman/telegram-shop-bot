@@ -4,8 +4,9 @@
   "description": "shop bot for mum",
   "main": "index.js",
   "scripts": {
-    "dev": "env-cmd nodemon index.js",
-    "repl": "env-cmd node"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start":"node index.js"
   },
   "repository": "https://github.com/opariffazman/telegram-shop-bot.git",
   "author": "opariffazman <opariffazman@gmail.com>",
