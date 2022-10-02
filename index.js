@@ -1,6 +1,5 @@
 const express = require("express")
 const router = express.Router()
-
 const app = express()
 
 const processSomething = callback => {
@@ -19,4 +18,5 @@ router.post("/hook", (req, res, next) => {
 
 module.exports = router
 
+const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`Telegram ShopBot listening at ${port}`))
