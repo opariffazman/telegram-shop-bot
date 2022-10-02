@@ -18,16 +18,6 @@ app.listen(port, () => console.log(`Node.js server started on port ${port}.`))
 const token = process.env.BOT_TOKEN
 const bot = new Telegraf(token)
 
+const webhookDomain = 'https://prickly-coat-mite.cyclic.app/'
+app.use(await bot.createWebhook({ domain: webhookDomain }))
 bot.on("text", ctx => ctx.reply("Hello"))
-
-// Start webhook via launch method (preferred)
-bot.launch({
-  webhook: {
-    // Public domain for webhook; e.g.: example.com
-    domain: 'https://prickly-coat-mite.cyclic.app/',
-
-    // Port to listen on; e.g.: 8080
-    port: port,
-
-  },
-})
