@@ -1,12 +1,18 @@
-const { Telegraf } = require('telegraf');
+const express = require("express")
+const router = express.Router()
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
-bot.start((ctx) => ctx.reply('Welcome'));
-bot.help((ctx) => ctx.reply('Send me a sticker'));
-bot.on('sticker', (ctx) => ctx.reply('👍'));
-bot.hears('hi', (ctx) => ctx.reply('Hey there'));
-bot.launch();
+const processSomething = callback => {
+  setTimeout(callback, 20000)
+}
 
-// Enable graceful stop
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));
+router.post("/hook", (req, res, next) => {
+  processSomething(() => {
+    const webhookUrl = req.params.url
+
+    console.log(`webhookUrl called`)
+  });
+
+  res.status(200).send('OK')
+})
+
+module.exports = router
