@@ -1,4 +1,5 @@
-import { Telegraf } from "telegraf";
+const { Telegraf } = require('telegraf')
+
 const express = require('express')
 
 // webhook
