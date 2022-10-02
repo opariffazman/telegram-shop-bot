@@ -1,0 +1,13 @@
+{
+  "name": "telegram-shop-bot",
+  "version": "1.0.0",
+  "description": "shop bot for mum",
+  "main": "index.js",
+  "repository": "https://github.com/opariffazman/telegram-shop-bot.git",
+  "author": "opariffazman <opariffazman@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "expressjs": "^1.0.1",
+    "node-telegram-bot-api": "^0.59.0"
+  }
+}
