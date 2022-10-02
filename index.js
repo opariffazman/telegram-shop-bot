@@ -5,8 +5,8 @@ const port = process.env.PORT || 3000
 
 const app = express()
 
-const BOT_TOKEN = process.env.BOT_TOKEN | "5421681843:AAGeQcrYjBU4Qa-GdDeMgh9tjKu3RRCucJo"
-const PAYMENT_TOKEN = process.env.PAYMENT_TOKEN | "284685063:TEST:NjQ1ZjMxNTEwYmRj"
+const BOT_TOKEN = process.env.BOT_TOKEN
+const PAYMENT_TOKEN = process.env.PAYMENT_TOKEN
 
 const telegramBot = new TelegramBot(BOT_TOKEN, { polling: true })
 
