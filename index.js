@@ -1,22 +1,10 @@
-const express = require("express")
-const router = express.Router()
-const app = express()
+const express = require( 'express' );
+const app = express();
+app.use( express.json() );
 
-const processSomething = callback => {
-  setTimeout(callback, 20000)
-}
+app.post( '/', ( req, res ) => {
+    console.log( 'received webhook', req.body );
+    res.sendStatus( 200 );
+} );
 
-router.post("/hook", (req, res, next) => {
-  processSomething(() => {
-    const webhookUrl = req.params.url
-
-    console.log(`${webhookUrl} called`)
-  })
-
-  res.status(200).send('OK')
-})
-
-module.exports = router
-
-const port = process.env.PORT || 3000
-app.listen(port, () => console.log(`Telegram ShopBot listening at ${port}`))
+app.listen( 9000, () => console.log( 'Node.js server started on port 9000.' ) );
