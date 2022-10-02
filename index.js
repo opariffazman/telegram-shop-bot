@@ -28,3 +28,6 @@ telegramBot.onText(/\/list/, async (msg, match) => {
     }
   })
 })
+
+
+app.listen(port, () => console.log(`Telegram ShopBot listening at ${port}`))
