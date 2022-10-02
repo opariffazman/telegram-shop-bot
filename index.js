@@ -1,18 +1,18 @@
-const Telegraf = require('telegraf')
+const { Telegraf } = require('telegraf')
 
-const express = require('express')
+// const express = require('express')
 
-// webhook
-const app = express()
-app.use(express.json())
+// // webhook
+// const app = express()
+// app.use(express.json())
 
-app.post('/', (req, res) => {
-  console.log('received webhook', req.body)
-  res.sendStatus(200)
-})
+// app.post('/', (req, res) => {
+//   console.log('received webhook', req.body)
+//   res.sendStatus(200)
+// })
 
-const port = process.env.PORT || 9000
-app.listen(port, () => console.log(`Node.js server started on port ${port}.`))
+// const port = process.env.PORT || 9000
+// app.listen(port, () => console.log(`Node.js server started on port ${port}.`))
 
 // telegram bot
 const bot = new Telegraf(process.env.BOT_TOKEN)
