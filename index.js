@@ -1,4 +1,4 @@
-const { Telegraf } = require('telegraf')
+const Telegraf = require('telegraf')
 
 const express = require('express')
 
@@ -15,9 +15,13 @@ const port = process.env.PORT || 9000
 app.listen(port, () => console.log(`Node.js server started on port ${port}.`))
 
 // telegram bot
-const token = process.env.BOT_TOKEN
-const bot = new Telegraf(token)
+const bot = new Telegraf(process.env.BOT_TOKEN)
+//method for invoking start command
 
-const webhookDomain = 'https://prickly-coat-mite.cyclic.app/'
-app.use(await bot.createWebhook({ domain: webhookDomain }))
-bot.on("text", ctx => ctx.reply("Hello"))
+bot.command('start', ctx => {
+  console.log(ctx.from)
+  bot.telegram.sendMessage(ctx.chat.id, 'hello there! Welcome to my new telegram bot.', {
+  })
+})
+
+bot.launch()
